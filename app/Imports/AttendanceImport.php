@@ -17,6 +17,9 @@ class AttendanceImport implements ToModel, WithHeadingRow, WithUpserts
     */
     public function model(array $row)
     {
+        if (empty($row['name'])) {
+            return null;
+        }
         try {
             // Tell Carbon exactly to look for Day (d), Month (m), then Year (Y)
             $formattedDate = Carbon::createFromFormat('d/m/Y', $row['date'])->format('Y-m-d');
