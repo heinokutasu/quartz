@@ -1,11 +1,110 @@
 @import 'tailwindcss';
-
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+@import "material-symbols/outlined.css"; /* This localizes your icons */
+@import "./fonts.css"; /* This localizes your Geist font */
+@import "tom-select/dist/css/tom-select.css"; /* Standard theme */
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+  /* Colors */
+  --color-primary: #1162d4;
+  --color-background-light: #f6f7f8;
+  --color-background-dark: #101822;
+
+  /* Fonts */
+  --font-display: "Geist", "sans-serif";
+
+  /* Border Radius */
+  --radius-default: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+body {
+        font-family: 'Geist', sans-serif;
+    }
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* Styling Tom Select to look "Card-less" and modern */
+    .ts-control {
+        border: none !important;
+        padding: 0.65rem 1rem !important;
+        border-radius: 0.75rem !important;
+        background-color: #fff !important;
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05) !important;
+    }
+    .dark .ts-control {
+        background-color: #111827 !important; /* gray-900 */
+        color: #e5e7eb !important;
+    }
+    .ts-wrapper.single .ts-control {
+        background-image: none !important;
+    }
+
+@media print {
+    /* Hide all UI elements */
+    header, form, button, .no-print, .print\:hidden {
+        display: none !important;
+    }
+
+    /* 1. Set minimal paper margins */
+    @page {
+        margin: 0cm; /* Uses more of the paper */
+        size: A4 portrait;
+    }
+
+    /* 2. Global uniform font size and tighter line spacing */
+    body {
+        font-size: 8pt !important;
+        line-height: 1.1 !important; /* Squeezes text lines together */
+    }
+
+    /* 3. Compress the Top Header (Name & Dates) */
+    .mt-4, .mb-5, .pb-4, .gap-2, .gap-4, .mb-6 {
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 4px !important;
+    }
+    h2 { font-size: 11pt !important; margin: 0 !important; line-height: 1 !important; }
+    p.text-sm { font-size: 9pt !important; margin: 0 !important; }
+
+    /* Target specifically to override Tailwind utilities */
+    table tbody tr td,
+    table thead tr th {
+        font-size: 6pt !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        color: black !important;
+        height: auto !important;
+    }
+
+    /* Force the status dots/badges to be smaller too */
+    td span, td div {
+        font-size: 6pt !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 5. Squeeze the Table (The most important part) */
+    table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    th, td {
+        /* This saves the most space: 2px top/bottom padding instead of standard web padding */
+        padding: 2px 4px !important;
+        font-size: 8pt !important; /* Uniform small data font */
+        border-bottom: 1px solid #e2e8f0 !important;
+        vertical-align: middle !important;
+    }
+
+    th {
+        font-weight: bold !important;
+        border-bottom: 2px solid #000 !important;
+        padding-bottom: 4px !important;
+    }
+
+    /* Force single-line text where possible */
+    td { white-space: nowrap !important; }
 }

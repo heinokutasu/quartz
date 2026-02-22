@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 Route::prefix('portal')->group(function () {
-    Route::get('/attendance', [AttendanceController::class, 'index'])->name('home');
+    Route::get('/', [AttendanceController::class, 'index'])->name('home');
     Route::post('/upload', [AttendanceController::class, 'upload'])->name('upload');
     Route::get('/report', [AttendanceController::class, 'report'])->name('report');
 });
