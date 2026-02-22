@@ -1,10 +1,6 @@
 {
-  "node_modules/material-symbols/material-symbols-outlined.woff2": {
-    "file": "assets/material-symbols-outlined-Bgl3Icaq.woff2",
-    "src": "node_modules/material-symbols/material-symbols-outlined.woff2"
-  },
   "resources/css/app.css": {
-    "file": "assets/app-XPSpZmxu.css",
+    "file": "assets/app-C3ui8Rtf.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -23,14 +19,6 @@
   "resources/fonts/geist-v4-latin-700.woff2": {
     "file": "assets/geist-v4-latin-700-CKFtLPQ7.woff2",
     "src": "resources/fonts/geist-v4-latin-700.woff2"
-  },
-  "resources/fonts/geist-v4-latin-800.woff2": {
-    "file": "assets/geist-v4-latin-800-D7Id04DE.woff2",
-    "src": "resources/fonts/geist-v4-latin-800.woff2"
-  },
-  "resources/fonts/geist-v4-latin-900.woff2": {
-    "file": "assets/geist-v4-latin-900-CIfxv7Fs.woff2",
-    "src": "resources/fonts/geist-v4-latin-900.woff2"
   },
   "resources/js/app.js": {
     "file": "assets/app-8_1Beo9D.js",

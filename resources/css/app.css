@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import "material-symbols/outlined.css"; /* This localizes your icons */
 @import "./fonts.css"; /* This localizes your Geist font */
 @import "tom-select/dist/css/tom-select.css"; /* Standard theme */
 
@@ -21,24 +20,20 @@
 body {
         font-family: 'Geist', sans-serif;
     }
-    .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+
+    /* Use the ! prefix for important, and make sure @apply is used correctly */
+    .ts-control {
+        @apply !rounded-xl !border-none !shadow-sm;
+        padding: 10px 16px !important; /* Standard CSS properties still use !important at the end */
     }
 
-    /* Styling Tom Select to look "Card-less" and modern */
-    .ts-control {
-        border: none !important;
-        padding: 0.65rem 1rem !important;
-        border-radius: 0.75rem !important;
-        background-color: #fff !important;
-        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05) !important;
-    }
     .dark .ts-control {
-        background-color: #111827 !important; /* gray-900 */
-        color: #e5e7eb !important;
+        @apply !bg-slate-900 !text-white;
     }
-    .ts-wrapper.single .ts-control {
-        background-image: none !important;
+
+    /* This fixes the dropdown menu colors for dark mode */
+    .dark .ts-dropdown {
+        @apply !bg-slate-900 !text-white !border-slate-800;
     }
 
 @media print {
