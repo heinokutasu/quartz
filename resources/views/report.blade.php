@@ -52,7 +52,7 @@
                             <option value="">-- Select Employee --</option>
                             @foreach($employees as $emp)
                                 <option value="{{ $emp->employee_name }}" {{ request('employee_name') == $emp->employee_name ? 'selected' : '' }}>
-                                    {{ $emp->employee_name }}
+                                    {{ strtoupper($emp->employee_name) }}
                                 </option>
                             @endforeach
                         </select>
@@ -91,7 +91,7 @@
             @if($hasSearched)
             <div class="hidden print:flex items-baseline justify-between">
                 <p class="text-s text-black font-bold">
-                    Employee: {{ request('employee_name') }}
+                    Employee: {{ strtoupper(request('employee_name')) }}
                 </p>
 
                 <p class="text-xs text-black text-right">
@@ -109,7 +109,7 @@
                     <div class="flex flex-col gap-1">
                         <div class="flex items-center gap-3">
                             <h2 class="text-xl font-mono text-slate-900 dark:text-white tracking-tight">
-                                Employee: {{ request('employee_name') }}
+                                Employee: {{ strtoupper(request('employee_name')) }}
                             </h2>
                             <span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase rounded-md">
                                 {{ $results->count() }} Records
